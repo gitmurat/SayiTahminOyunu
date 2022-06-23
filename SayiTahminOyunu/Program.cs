@@ -4,24 +4,30 @@
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            int tutulansayi = rnd.Next(100);
+            
             Console.WriteLine("Bu oyunda bilgisayarın 1 ile 100 arasında tuttuğu bir sayıyı tahmin etmeye çalışacaksınız");
             Console.WriteLine("BOL ŞANS! :)");
             Console.WriteLine("");
             Console.WriteLine("----------------------------------------");
             Console.WriteLine("");
-            Console.WriteLine("İlk tahmininizi girin");
+            
 
             string tahminyazi;
             int tahmin;
-            bool keepgoing = true;
+            bool devamet = true;
             string tekrar;
             int tekrar1;
-            tahminyazi = Console.ReadLine();
-            tahmin = Convert.ToInt32(tahminyazi);
-            while (keepgoing)
+            
+            while (devamet)
             {
+                Random rnd = new Random();
+                int tutulansayi = rnd.Next(100);
+                
+                Console.WriteLine("İlk tahmininizi girin");
+                tahminyazi = Console.ReadLine();
+                tahmin = Convert.ToInt32(tahminyazi);
+                
+
                 while (tahmin != tutulansayi)
                 {
                     if (tahmin < tutulansayi)
@@ -47,7 +53,7 @@
                     if (tekrar1 == 0)
                     {
                         Console.WriteLine("Oynadığınız için teşekkürler");
-                        keepgoing = false;
+                        devamet = false;
                     }
                     else
                     {
